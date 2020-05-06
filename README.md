@@ -3,7 +3,6 @@ Preview your text in various Minecraft color codes as well as be able to copy th
 
 ## Bugs
 [ ] Fix bug with some characters such as `:` not showing up  
-[ ] 
 
 ## To-Do
 [ ] Implement formatting codes (ex. bold, italics, obfuscated, etc.)  
