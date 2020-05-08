@@ -29,15 +29,24 @@ function copyToClipboard(element, tag) {
   const $temp = $('<input>');
   $('body').append($temp);
 
-  $temp.val($(element).text()).select();
+  $temp.val($(element).ignore('span').text()).select();
   document.execCommand('copy');
   $temp.remove();
 
   $(tag)
-    .text('Copied!')
+    .text('Copied to clipboard!')
     .removeClass('is-danger')
     .addClass('is-success');
     
+}
+
+/** 
+ * Credits to https://stackoverflow.com/users/383904/roko-c-buljan for the ignore jQuery function
+ * Link: https://stackoverflow.com/a/11348383/10804092
+ */
+
+$.fn.ignore = function(sel) {
+  return this.clone().find(sel||'>*').remove().end();
 }
 
 $(function(){
