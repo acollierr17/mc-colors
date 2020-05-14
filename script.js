@@ -8,12 +8,12 @@ function htmlEncode(value){
 
 setInterval(function() {
   $('.obfuscated').text(randomizer($('.obfuscated').text()));
-}, 100);
+}, 40);
 
 function randomizer(rawr) {
   const length = rawr.length;
   let text = '';
-  const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
   for (let i=0; i < length; i++)
     text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -51,14 +51,12 @@ $.fn.ignore = function(sel) {
 
 $(function(){
   $('#raw-preview-text').hover(function(){
-    // console.log('weee...');
     $(this).append($('<span id="raw-preview-text-copy" class="tag is-danger is-light">Click to copy</span>'));
   }, function() {
     $(this).find('#raw-preview-text-copy').remove();
   });
 
   $('#preview-text').hover(function(){
-    // console.log('weee...');
     $(this).append($('<span id="preview-text-copy" class="tag is-danger is-light">Click to copy</span>'));
   }, function() {
     $(this).find('#preview-text-copy').remove();
@@ -83,36 +81,36 @@ $(function(){
     inputValue = inputValue.replace(/\n/gi, '&r<br />');
 
     // colors
-    inputValue = inputValue.replace(/&0/gi, '</span>&r<span style="color:#000000">');
-    inputValue = inputValue.replace(/&1/gi, '</span>&r<span style="color:#0000AA">');
-    inputValue = inputValue.replace(/&2/gi, '</span>&r<span style="color:#00AA00">');
-    inputValue = inputValue.replace(/&3/gi, '</span>&r<span style="color:#00AAAA">');
-    inputValue = inputValue.replace(/&4/gi, '</span>&r<span style="color:#AA0000">');
-    inputValue = inputValue.replace(/&5/gi, '</span>&r<span style="color:#AA00AA">');
-    inputValue = inputValue.replace(/&6/gi, '</span>&r<span style="color:#FFAA00">');
-    inputValue = inputValue.replace(/&7/gi, '</span>&r<span style="color:#AAAAAA">');
-    inputValue = inputValue.replace(/&8/gi, '</span>&r<span style="color:#555555">');
-    inputValue = inputValue.replace(/&9/gi, '</span>&r<span style="color:#5555FF">');
-    inputValue = inputValue.replace(/&a/gi, '</span>&r<span style="color:#55FF55">');
-    inputValue = inputValue.replace(/&b/gi, '</span>&r<span style="color:#55FFFF">');
-    inputValue = inputValue.replace(/&c/gi, '</span>&r<span style="color:#FF5555">');
-    inputValue = inputValue.replace(/&d/gi, '</span>&r<span style="color:#FF55FF">');
-    inputValue = inputValue.replace(/&e/gi, '</span>&r<span style="color:#FFFF55">');
-    inputValue = inputValue.replace(/&f/gi, '</span>&r<span style="color:#FFFFFF">');
+    inputValue = inputValue.replace(/&0|\\u00A70/gi, '</span>&r<span style="color:#000000">');
+    inputValue = inputValue.replace(/&1|\\u00A71/gi, '</span>&r<span style="color:#0000AA">');
+    inputValue = inputValue.replace(/&2|\\u00A72/gi, '</span>&r<span style="color:#00AA00">');
+    inputValue = inputValue.replace(/&3|\\u00A73/gi, '</span>&r<span style="color:#00AAAA">');
+    inputValue = inputValue.replace(/&4|\\u00A74/gi, '</span>&r<span style="color:#AA0000">');
+    inputValue = inputValue.replace(/&5|\\u00A75/gi, '</span>&r<span style="color:#AA00AA">');
+    inputValue = inputValue.replace(/&6|\\u00A76/gi, '</span>&r<span style="color:#FFAA00">');
+    inputValue = inputValue.replace(/&7|\\u00A77/gi, '</span>&r<span style="color:#AAAAAA">');
+    inputValue = inputValue.replace(/&8|\\u00A78/gi, '</span>&r<span style="color:#555555">');
+    inputValue = inputValue.replace(/&9|\\u00A79/gi, '</span>&r<span style="color:#5555FF">');
+    inputValue = inputValue.replace(/&a|\\u00A7a/gi, '</span>&r<span style="color:#55FF55">');
+    inputValue = inputValue.replace(/&b|\\u00A7b/gi, '</span>&r<span style="color:#55FFFF">');
+    inputValue = inputValue.replace(/&c|\\u00A7c/gi, '</span>&r<span style="color:#FF5555">');
+    inputValue = inputValue.replace(/&d|\\u00A7d/gi, '</span>&r<span style="color:#FF55FF">');
+    inputValue = inputValue.replace(/&e|\\u00A7e/gi, '</span>&r<span style="color:#FFFF55">');
+    inputValue = inputValue.replace(/&f|\\u00A7f/gi, '</span>&r<span style="color:#FFFFFF">');
 
     // formatting
     // bold
-    inputValue = inputValue.replace(/&l/gi, '<span style="font-weight:900;">');
+    inputValue = inputValue.replace(/&l|\\u00A7l/gi, '<span style="font-weight:900;">');
     // italic
-    inputValue = inputValue.replace(/&o/gi, '<span style="font-style:italic;">');
+    inputValue = inputValue.replace(/&o|\\u00A7o/gi, '<span style="font-style:italic;">');
     // strikethrough
-    inputValue = inputValue.replace(/&m/gi, '<span style="text-decoration:line-through;">');
+    inputValue = inputValue.replace(/&m|\\u00A7m/gi, '<span style="text-decoration:line-through;">');
     // underlined
-    inputValue = inputValue.replace(/&n/gi, '<span style="text-decoration:underline">');
+    inputValue = inputValue.replace(/&n|\\u00A7n/gi, '<span style="text-decoration:underline">');
     // obfuscated
-    inputValue = inputValue.replace(/&k/gi, '<span class="obfuscated">');
+    inputValue = inputValue.replace(/&k|\\u00A7k/gi, '<span class="obfuscated">');
     // reset
-    inputValue = inputValue.replace(/&r/gi, "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>");
+    inputValue = inputValue.replace(/&r|\\u00A7r/gi, "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>");
 
     inputValue.length >= 1 ? previewRaw.text(inputRaw) : previewRaw.text(defaultText);
     inputValue.length >= 1 ? preview.html(inputValue) : preview.text(defaultText);
